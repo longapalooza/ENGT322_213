@@ -1,6 +1,6 @@
 min_T = 5;
 
-motor_D = 30;
+motor_D = 40;
 motor_offset = 30;
 
 gap_T = 1.5;
