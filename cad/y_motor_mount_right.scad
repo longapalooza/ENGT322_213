@@ -178,12 +178,12 @@ module y_motor_mount_right(print_orientation=false){
       }
       
       // rod hole
-      translate([LX-y_motor_mount_MS_CT-0.1, LY/2, ply_LZ+interior_z_padding+nema_W/2+2*chamfer_leg(x_carriage_hole_chamfer)+lnut_SD/2+lnut_SPD/2+interior_z_padding+line_OD/2])
+      translate([LX-y_motor_mount_MS_CT-0.1, LY/2, ply_LZ+interior_z_padding+nema_W/2+2*chamfer_leg(x_carriage_hole_chamfer)+lnut_MSD/2+lnut_SPD/2+interior_z_padding+line_OD/2])
       rotate([0, 90, 0])
       cylinder(d=rod_D, h=y_motor_mount_MS_CT+0.2);
       
       // rod hole chamfer
-      translate([LX, LY/2, ply_LZ+interior_z_padding+nema_W/2+2*chamfer_leg(x_carriage_hole_chamfer)+lnut_SD/2+lnut_SPD/2+interior_z_padding+line_OD/2])
+      translate([LX, LY/2, ply_LZ+interior_z_padding+nema_W/2+2*chamfer_leg(x_carriage_hole_chamfer)+lnut_MSD/2+lnut_SPD/2+interior_z_padding+line_OD/2])
       rotate([0, 90, 0])
       chamfer_cut(rod_D, y_hole_chamfer);
       
