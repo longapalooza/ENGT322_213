@@ -16,7 +16,8 @@ lnut_ID = lnut_m8_ID;
 lnut_D1 = lnut_m8_D1;
 lnut_OD = lnut_m8_OD;
 lnut_SPD = lnut_m8_SPD;
-lnut_SD = lnut_m8_SD;
+lnut_SHD = lnut_m8_SHD;
+lnut_SD = fast_m3_D;
 lnut_L1 = lnut_m8_L1;
 lnut_L2 = lnut_m8_L2;
 lnut_L3 = lnut_m8_L3;
@@ -73,6 +74,7 @@ nema_MSHD_fit = tol2;             // fit tolerance for nema mounting screw
 exterior_padding = tol6;          // space between exterior wall and
                                   // feature
 
+interior_x_padding = tol7;        // space between features in x direction
 interior_y_padding = tol7;        // space between features in y direction
 interior_z_padding = tol7;        // space between features in z direction
 corner_chamfer = chm3;            // chamfer size of exterior corners
@@ -101,7 +103,7 @@ x_carriage_left_LY = line_OD + 2*chamfer_leg(x_carriage_hole_chamfer) +
                      2*exterior_padding;
 
 x_carriage_left_LZ = 2*exterior_padding + 6*chamfer_leg(chm2) +
-                     2*interior_z_padding + lnut_SD + lnut_SPD + line_OD +
+                     2*interior_z_padding + lnut_SHD + lnut_SPD + line_OD +
                      rod_D + x_carriage_rod_spacing;
 
 // x carriage right
@@ -133,7 +135,14 @@ y_motor_mount_MS_CT = 8.5;                    // NEMA motor mounting screw
 y_motor_mount_LX = nema_T + y_motor_mount_MS_CT;
 y_motor_mount_LY = nema_W + 2*interior_y_padding + 2*y_gusset_T;
 y_motor_mount_LZ = ply_LZ + interior_y_padding + nema_W/2 +
-                   2*chamfer_leg(x_carriage_hole_chamfer) + lnut_SD/2 +
+                   2*chamfer_leg(x_carriage_hole_chamfer) + lnut_SHD/2 +
+                   lnut_SPD/2 + interior_z_padding + line_OD/2 + rod_D/2 +
+                   exterior_padding;
+// y rod mount
+y_rod_mount_LX = nema_T + roll_T + interior_x_padding;
+y_rod_mount_LY = nema_W + 2*interior_y_padding + 2*y_gusset_T;
+y_rod_mount_LZ = ply_LZ + interior_y_padding + nema_W/2 +
+                   2*chamfer_leg(x_carriage_hole_chamfer) + lnut_SHD/2 +
                    lnut_SPD/2 + interior_z_padding + line_OD/2 + rod_D/2 +
                    exterior_padding;
 
