@@ -74,11 +74,12 @@ fast_m5_HW = 4;       // head hex width
 // Nuts
 //
 // ACME Lead Screw Brass Nut from ZYLtech
-lnut_m8_ID = 8;        // inside diameter
-lnut_m8_D1 = 10.2;     // diameter of lips
-lnut_m8_OD = 22;       // outside diameter
-lnut_m8_SPD = 16;      // mounting screw placement diameter
-lnut_m8_SD = 3.5;      // mounting screw diameter
+lnut_m8_ID = 8;           // inside diameter
+lnut_m8_D1 = 10.2;        // diameter of lips
+lnut_m8_OD = 22;          // outside diameter
+lnut_m8_SPD = 16;         // mounting screw placement diameter
+lnut_m8_SHD = 3.5;        // mounting screw hole diameter
+lnut_m8_SD = fast_m3_D;   // mounting screw diameter
 lnut_m8_L1 = 1.5;
 lnut_m8_L2 = 3.5;
 lnut_m8_L3 = 10;
