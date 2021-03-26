@@ -79,30 +79,31 @@ lnut_m8_D1 = 10.2;        // diameter of lips
 lnut_m8_OD = 22;          // outside diameter
 lnut_m8_SPD = 16;         // mounting screw placement diameter
 lnut_m8_SHD = 3.5;        // mounting screw hole diameter
-lnut_m8_SD = fast_m3_D;   // mounting screw diameter
+lnut_m8_MSD = fast_m3_D;  // mounting screw diameter
+lnut_m8_MSHD = fast_m3_HD;// moutning screw head diameter
 lnut_m8_L1 = 1.5;
 lnut_m8_L2 = 3.5;
 lnut_m8_L3 = 10;
-lnut_m8_NS = 4;       // number of mounting screws
+lnut_m8_NS = 4;           // number of mounting screws
 // M5 t slot nut
 tnut_m5_L = 10;           // length, along slot direction
 tnut_m5_W = 10;           // width, perpendicular to beam
 tnut_m5_D = fast_m5_D;    // diameter of hole
 // M3 hex nut from McMaster-Carr
-hnut_m3_W = 5.5;      // hex width, flat side to flat side
-hnut_m3_T = 2.5;      // thickness
+hnut_m3_W = 5.5;          // hex width, flat side to flat side
+hnut_m3_T = 2.5;          // thickness
 // M4 hex nut from McMaster-Carr
-hnut_m4_W = 7;        // hex width, flat side to flat side
-hnut_m4_T = 3.2;      // thickness
+hnut_m4_W = 7;            // hex width, flat side to flat side
+hnut_m4_T = 3.2;          // thickness
 // M5 hex nut from McMaster-Carr
-hnut_m5_W = 8;        // hex width, flat side to flat side
-hnut_m5_T = 4;        // thickness
+hnut_m5_W = 8;            // hex width, flat side to flat side
+hnut_m5_T = 4;            // thickness
 // M4 square nut from McMaster-Carr
-snut_m4_W = 7;        // square width, flat side to flat side
-snut_m4_T = 3.2;      // thickness
+snut_m4_W = 7;            // square width, flat side to flat side
+snut_m4_T = 3.2;          // thickness
 // M5 square nut from McMaster-Carr
-snut_m5_W = 8;        // square width, flat side to flat side
-snut_m5_T = 4;        // thickness
+snut_m5_W = 8;            // square width, flat side to flat side
+snut_m5_T = 4;            // thickness
 
 //
 // Bearing rods
