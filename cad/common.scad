@@ -3,6 +3,12 @@ print_orientation = false;
 //
 // vitamin selection
 //
+// coupler selection
+coupler_L = coupler_58_L;
+coupler_OD = coupler_58_OD;
+coupler_D1 = coupler_58_D1;
+coupler_D2 = coupler_58_D2;
+coupler_IL = coupler_58_IL;
 // linear bearing selection
 line_ID = line_m12_ID;
 line_OD = line_m12_OD;
@@ -57,10 +63,10 @@ beam_D = fast_m5_D;
 // all parts
 filament_color = "orange";
 roll_fit = 0;                     // fit tolerance for roller bearing
-line_fit = tol2;                  // fit tolerance for linear bearing
+line_fit = tol4;                  // fit tolerance for linear bearing
 rod_fit = 0;                      // fit tolerance for bearing rod
 lnut_fit = tol2;                  // fit tolerance for lead screw nut
-lnut_S_fit = 0;                   // fit tolerance for lead screw nut screw
+lnut_S_fit = tol1;                   // fit tolerance for lead screw nut screw
                                   // (the screws that hold the lead screw
                                   // nut in place)
 
@@ -100,7 +106,7 @@ x_carriage_hole_chamfer = chm2;               // chamfer of hole cuts
 x_carriage_left_LX = 2*line_L + 2*chamfer_leg(x_carriage_hole_chamfer) + 
                      x_carriage_interior_x_padding;
 
-x_carriage_left_LY = line_OD + 2*chamfer_leg(x_carriage_hole_chamfer) + 
+x_carriage_left_LY = line_OD + line_fit + 2*chamfer_leg(x_carriage_hole_chamfer) + 
                      2*exterior_padding;
 
 x_carriage_left_LZ = 2*exterior_padding + 6*chamfer_leg(chm2) +
@@ -116,13 +122,9 @@ x_carriage_nema_MS_CT = 8.5;                  // NEMA motor mounting screw
                                               // thickness
 
 // bracket
-//brkt_L1 = 3;          // length of lip
 brkt_chm = chm2;      // chamfer
-//brkt_CT = 3;          // bolt clamping thickness
 brkt_F_CT = 3;        // fastner clamping thickness
-//brkt_BO = 3;          // bolt offset
 brkt_FO = 3;          // fastner offset
-//brkt_B_fit = tol2;    // fit tolerance for bolt
 brkt_F_fit = tol2;    // fit tolerance for fastner
 
 // y axis
@@ -131,7 +133,7 @@ y_gusset_T = 2;               // y mount gusset thickness
 y_hole_chamfer = chm2;
 // y motor mount
 y_motor_mount_MS_CT = 8.5;                    // NEMA motor mounting screw 
-                                              // counter sink clamping thickness
+                                              // clamping thickness
 
 y_motor_mount_LX = nema_T + y_motor_mount_MS_CT;
 y_motor_mount_LY = nema_W + 2*interior_y_padding + 2*y_gusset_T;
