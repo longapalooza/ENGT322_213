@@ -52,6 +52,13 @@ beam_W = 20;                  // beam width
 beam_SW = 6.2;                // beam slot width
 beam_SD = 6.15;               // beam slot depth
 
+// 5/8 coupler from ZYLtech
+coupler_58_L = 24.7;             // coupler length
+coupler_58_OD = 18.8;            // coupler outside diameter
+coupler_58_D1 = 8.0;             // coupler larger inside diameter
+coupler_58_D2 = 5.1;             // coupler smaller inside diameter
+coupler_58_IL = 18.1;            // coupler depth of larger inside diameter
+
 // Fastners
 //
 // M3 from McMaster-Carr
