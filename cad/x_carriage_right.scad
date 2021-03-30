@@ -88,14 +88,14 @@ module x_carriage_right(print_orientation = false){
         translate([0, 0, lnut_SPD/2]){
           rotate([0, 90, 0])
           translate([0, 0, -0.1])
-          cylinder(d = lnut_MSD + lnut_S_fit, h = LX + 0.2);
+          cylinder(d = lnut_MSD - lnut_S_fit, h = LX + 0.2);
         
           rotate([0, -90, 0])
-          chamfer_cut(lnut_MSD + lnut_S_fit, hole_chm);
+          chamfer_cut(lnut_MSD - lnut_S_fit, hole_chm);
           
           translate([LX, 0, 0])
           rotate([0, 90, 0])
-          chamfer_cut(lnut_MSD + lnut_S_fit, hole_chm);
+          chamfer_cut(lnut_MSD - lnut_S_fit, hole_chm);
         }
       }
       
