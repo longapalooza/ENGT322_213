@@ -56,7 +56,6 @@ brkt_HD = fast_m5_HD;
 // beam fastner selection
 beam_D = fast_m5_D;
 
-
 //
 // Parts
 //
@@ -148,6 +147,70 @@ y_rod_mount_LZ = ply_LZ + interior_y_padding + nema_W/2 +
                    2*chamfer_leg(x_carriage_hole_chamfer) + lnut_SHD/2 +
                    lnut_SPD/2 + interior_z_padding + line_OD/2 + rod_D/2 +
                    exterior_padding;
+
+// cut lengths
+beam_LX = ply_LX - 2*beam_W;
+beam_LX_N = 5;
+
+beam_LY = ply_LY + y_motor_mount_LX + y_rod_mount_LY;
+beam_LY_N = 2;
+
+lead_LX_max = ply_LX - y_motor_mount_LY - x_carriage_left_LY/2 + roll_T + x_carriage_right_LY/2 - nema_SL;
+lead_LX_min = lead_LX_max - 2*(coupler_L - coupler_IL);
+lead_LX = (lead_LX_max + lead_LX_min)/2;
+lead_LX_tol = (lead_LX_max - lead_LX_min)/2;
+lead_LX_N = 1;
+
+lead_LY_max = ply_LY + roll_T + y_motor_mount_MS_CT - nema_SL - interior_y_padding;
+lead_LY_min = lead_LY_max - 2*(coupler_L - coupler_IL);
+lead_LY = (lead_LY_max + lead_LY_min)/2;
+lead_LY_tol = round(10*(lead_LY_max - lead_LY_min)/2)/10;
+lead_LY_N = 2;
+
+lead_LZ_max = 150;
+lead_LZ_min = 150;
+lead_LZ = (lead_LZ_max + lead_LZ_min)/2;
+lead_LZ_tol = (lead_LZ_max - lead_LZ_min)/2;
+lead_LZ_N = 1;
+
+rod_LX_max = ply_LX - y_motor_mount_LY + x_carriage_left_LY/2 + x_carriage_right_LY/2 - exterior_padding;
+rod_LX_min = rod_LX_max - x_carriage_left_LY/2 - (x_carriage_right_LY - exterior_padding)/2;
+rod_LX = (rod_LX_max + rod_LX_min)/2;
+rod_LX_tol = round(10*(rod_LX_max - rod_LX_min)/2)/10;
+rod_LX_N = 2;
+
+rod_LY_max = ply_LY + roll_T + interior_x_padding + y_motor_mount_MS_CT;
+rod_LY_min = rod_LY_max;
+rod_LY = (rod_LY_max + rod_LY_min)/2;
+rod_LY_tol = (rod_LY_max - rod_LY_min)/2;
+rod_LY_N = 2;
+
+rod_LZ_max = 1;
+rod_LZ_min = 1;
+rod_LZ = (rod_LZ_max + rod_LZ_min)/2;
+rod_LZ_tol = round(10*(rod_LZ_max - rod_LZ_min)/2)/10;
+rod_LZ_N = 2;
+
+echo(str("Plywood X = ", ply_LX));
+echo(str("Plywood Y = ", ply_LY));
+echo();
+
+echo(str("Tslot Beam X = ", beam_LX, " x ", beam_LX_N));
+echo(str("Tslot Beam Y = ", beam_LY, " x ", beam_LY_N));
+echo(str("Tslot Total Length = ", beam_LX*beam_LX_N + beam_LY*beam_LY_N));
+echo();
+
+echo(str("Lead Screw X = ", lead_LX, "+/-", lead_LX_tol, " x ", lead_LX_N));
+echo(str("Lead Screw Y = ", lead_LY, "+/-", lead_LY_tol, " x ", lead_LY_N));
+echo(str("Lead Screw Z = ", lead_LZ, "+/-", lead_LZ_tol, " x ", lead_LZ_N));
+echo(str("Lead Screw Total Length = ", lead_LX*lead_LX_N + lead_LY*lead_LY_N + lead_LZ*lead_LZ_N));
+echo();
+
+echo(str("Linear Rod X = ", rod_LX, "+/-", rod_LX_tol, " x ", rod_LX_N));
+echo(str("Linear Rod Y = ", rod_LY, "+/-", rod_LY_tol, " x ", rod_LY_N));
+echo(str("Linear Rod Z = ", rod_LZ, "+/-", rod_LZ_tol, " x ", rod_LZ_N));
+echo(str("Linear Rod Total Length = ", rod_LX*rod_LX_N + rod_LY*rod_LY_N + rod_LZ*rod_LZ_N));
+echo();
 
 //
 // Modules
